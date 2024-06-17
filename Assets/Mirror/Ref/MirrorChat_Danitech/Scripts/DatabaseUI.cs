@@ -14,7 +14,7 @@ public class DatabaseUI : MonoBehaviour
 
     [Header("ConnectionInfo")]
     [SerializeField] string _ip = "127.0.0.1";
-    [SerializeField] string _dbName = "test";
+    [SerializeField] string _dbName = "dungeon_busters";
     [SerializeField] string _uid = "root";
     [SerializeField] string _pwd = "1234";
 
@@ -145,7 +145,7 @@ public class DatabaseUI : MonoBehaviour
         }
         Text_Log.text = string.Empty;
 
-        string query = string.IsNullOrWhiteSpace(Input_Query.text) ? "SELECT U_PlayerId,U_NickName,U_Level,U_LastQuestId FROM game_player"
+        string query = string.IsNullOrWhiteSpace(Input_Query.text) ? "SELECT U_Name,U_Password,U_Id FROM user_info"
             : Input_Query.text;
 
         SendQuery(query, "user_info");
